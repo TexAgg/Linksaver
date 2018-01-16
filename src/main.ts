@@ -1,6 +1,9 @@
+/// <reference path="index.d.ts"/>
 import {LinkSaver} from "./linksaver";
 
 const MENU_ITEM_ID = "LinkSaver-menu-item";
+
+console.log("Test");
 
 browser.contextMenus.create({
 	id: MENU_ITEM_ID,
@@ -9,6 +12,7 @@ browser.contextMenus.create({
 });
 
 browser.contextMenus.onClicked.addListener(function(info){
+	console.log("HELP ME");
 	if (info.menuItemId == MENU_ITEM_ID) {
 		LinkSaver.downloadUrl();
 	}

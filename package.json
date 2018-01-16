@@ -6,10 +6,8 @@
   "author": "Matt Gaikema",
   "license": "MIT",
   "devDependencies": {
-    "@types/firefox-webext-browser": "^58.0.1",
     "ts-loader": "^2.0.3",
     "typescript": "^2.6.2",
-    "web-ext-types": "^2.0.1",
     "webpack": "^2.2.1"
   },
   "dependencies": {}

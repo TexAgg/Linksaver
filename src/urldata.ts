@@ -16,6 +16,7 @@ export class UrlData
 	{
 		let result: string = "[InternetShortcut]";
 		result += "\nURL=" + this.url;
+		result += "\n";
 
 		return result;
 	}

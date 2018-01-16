@@ -1,18 +1,21 @@
 {
-	"manifest_version": 2,
-	"version": 1.0,
-	"name": "LinkSaver",
-	"author": "Matt Gaikema",
-	"permissions": [
-		"tabs",
-		"downloads",
-		"contextMenus"
-	],
+	"name": "Linksaver",
+	"description": "Saves the current page as a windows bookmark.",
+	"version": "1.0.0",
 	"applications": {
-      "gecko": {
-         "id": "linksaver@linksaver.com"
-      }
-   },
-   "background": {"scripts": ["dist/bundle.js"]}
-
+		"gecko": {
+		"id": "Linksaver@mattgaikema.com",
+		"strict_min_version": "57.0"
+		}
+	},
+	"permissions": ["contextMenus", "downloads", "tabs"],
+	"background": {"scripts": ["bundle.js"]},
+	"manifest_version": 2,
+	"icons": {
+		"64": "img/ico.png"
+	},
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
+	}
 }

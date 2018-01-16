@@ -2,30 +2,25 @@ import {UrlData} from "./urldata";
 
 export namespace LinkSaver
 {
-	/*
-	function getCurrentUrl(): Promise<any>
-	{
-		// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/getCurrent
-
-		let url: Promise<string> = new Promise((resolve) => {
-
-		});
-		
-		let gettingCurrent = browser.tabs.getCurrent();
-
-		return gettingCurrent;
-	}
-	*/
-
 	export function downloadUrl(): void
 	{
-		let gettingCurrent = browser.tabs.getCurrent();
-		gettingCurrent.then(function(tabinfo){
+		//let gettingCurrent = browser.tabs.getCurrent();
+
+		let gettingCurrent = browser.tabs.query({
+			'active': true,
+			'lastFocusedWindow': true
+		});
+		gettingCurrent.then(function(tabs){
+			let tabinfo = tabs[0];
 			let currentUrl: string = tabinfo.url;
 			let udata = new UrlData(currentUrl);
 
 			let fcontents: string = udata.fileString();
-			let blob = new Blob([fcontents]);
+			let blob = new Blob([fcontents],
+				{
+					type: "text/plain"
+				}
+			);
 			let furl = URL.createObjectURL(blob);
 
 			let downloading = browser.downloads.download(
