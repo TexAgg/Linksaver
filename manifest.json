@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"version": 1.0,
+	"name": "LinkSaver",
+	"author": "Matt Gaikema",
+	"permissions": [
+		"tabs",
+		"downloads",
+		"contextMenus"
+	],
+	"applications": {
+      "gecko": {
+         "id": "linksaver@linksaver.com"
+      }
+   },
+   "background": {"scripts": ["dist/bundle.js"]}
+
+}

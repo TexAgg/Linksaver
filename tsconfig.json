@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"removeComments": true,	
+		"module": "commonjs",
+    	"outDir": "lib/",
+		"declaration": true,
+		"target": "es6"
+	},
+	"files": [
+		"src/main.ts",
+		"src/urldata.ts",
+		"src/linksaver.ts"
+	]
+}

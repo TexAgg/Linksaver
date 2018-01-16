@@ -1,0 +1,5 @@
+node_modules/
+*.zip
+background.js
+lib/
+dist/
