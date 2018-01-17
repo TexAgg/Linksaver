@@ -2,7 +2,7 @@ import {UrlData} from "./urldata";
 
 export namespace LinkSaver
 {
-	export function downloadUrl(): void
+	export function downloadUrl(fname: string = "shortcut"): void
 	{
 		//let gettingCurrent = browser.tabs.getCurrent();
 
@@ -26,7 +26,7 @@ export namespace LinkSaver
 			let downloading = browser.downloads.download(
 				{
 					url: furl,
-					filename: "shortcut.url"
+					filename: fname+".url"
 				}
 			);
 		});

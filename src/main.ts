@@ -2,8 +2,19 @@
 import {LinkSaver} from "./linksaver";
 
 const MENU_ITEM_ID = "LinkSaver-menu-item";
+let defaultFilename = "shortcut";
 
-console.log("Test");
+function updateFilename()
+{
+	browser.storage.local.get({filename: "shortcut"}).then(function(result){
+		if (result.filename)
+			defaultFilename = result.filename;
+		console.log(result.filename);
+	}, function(error){
+		console.log(error);
+	}
+	);
+}
 
 browser.contextMenus.create({
 	id: MENU_ITEM_ID,
@@ -12,8 +23,9 @@ browser.contextMenus.create({
 });
 
 browser.contextMenus.onClicked.addListener(function(info){
-	console.log("HELP ME");
 	if (info.menuItemId == MENU_ITEM_ID) {
-		LinkSaver.downloadUrl();
+		updateFilename();
+		console.log(defaultFilename);
+		LinkSaver.downloadUrl(defaultFilename);
 	}
 });
