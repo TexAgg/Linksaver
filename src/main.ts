@@ -9,7 +9,7 @@ function updateFilename()
 	browser.storage.local.get({filename: "shortcut"}).then(function(result){
 		if (result.filename)
 			defaultFilename = result.filename;
-		console.log(result.filename);
+		//console.log(result.filename);
 	}, function(error){
 		console.log(error);
 	}
@@ -25,7 +25,7 @@ browser.contextMenus.create({
 browser.contextMenus.onClicked.addListener(function(info){
 	if (info.menuItemId == MENU_ITEM_ID) {
 		updateFilename();
-		console.log(defaultFilename);
+		//console.log(defaultFilename);
 		LinkSaver.downloadUrl(defaultFilename);
 	}
 });
