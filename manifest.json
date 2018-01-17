@@ -1,7 +1,7 @@
 {
 	"name": "Linksaver",
 	"description": "Saves highlighted text to a file.",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"applications": {
 		"gecko": {
 			"id": "Linksaver@mattgaikema.com",

@@ -2,10 +2,12 @@ import {UrlData} from "./urldata";
 
 export namespace LinkSaver
 {
+	/**
+	 * Download a shortcut to the current tab
+	 * @param fname The filename to download the file as (the extension will always be `.url`)
+	 */
 	export function downloadUrl(fname: string = "shortcut"): void
 	{
-		//let gettingCurrent = browser.tabs.getCurrent();
-
 		let gettingCurrent = browser.tabs.query({
 			'active': true,
 			'lastFocusedWindow': true
