@@ -1,6 +1,6 @@
 {
   "name": "LinkSaver",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Save links as Windows URL files",
   "main": "index.js",
   "author": "Matt Gaikema",
